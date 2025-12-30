@@ -29,7 +29,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "http://github.com/rfxcom/node-rfxcom.git"
+    "url": "https://github.com/loneObserver1/node-rfxcom.git"
   },
   "license": "MIT",
   "keywords": [

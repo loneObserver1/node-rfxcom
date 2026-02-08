@@ -16,6 +16,10 @@ class FakeSerialPort extends events.EventEmitter {
         if (callback && typeof callback === "function") {
             callback();
         }
+        // Simulate ACK so user callbacks (pendingCallbacks) are invoked after write
+        if (this.device && buffer.length > 4) {
+            this.device.simulateAck(buffer[3]);
+        }
     };
 
     flush(callback) {

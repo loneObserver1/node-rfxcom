@@ -55,7 +55,7 @@ describe('Lighting4 class', function () {
                 done();
             });
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 09,13,00,00,00,00,00,01,5E,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
         it('should send the correct bytes to the serialport (numeric data, hex string pulse width)', function (done) {
             let sentCommandId = NaN;

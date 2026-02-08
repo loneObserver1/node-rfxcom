@@ -47,7 +47,7 @@ describe('Rfy class', function () {
                 debugDevice.connected = true;
                 rfyd.stop('0x010203/01', done);
                 expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0C,1A,00,00,01,02,03,01,00,00,00,00,00');
-                debugDevice.acknowledge[0]();
+                debugDevice.simulateAck(0);
             });
             it('should handle no callback', function () {
                 rfy.stop('0x010203/01');
@@ -582,7 +582,7 @@ describe('Rfy class', function () {
                 rfyd.stop('0x010203/01', done);
 //                expect(debugLogSpy).toHaveBeenCalledWith('[rfxcom] on /dev/ttyUSB0 - Sent    : 0C,1A,00,00,01,02,03,01,00,00,00,00,00');
                 expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0C,1A,00,00,01,02,03,01,00,00,00,00,00');
-                debugDevice.acknowledge[0]();
+                debugDevice.simulateAck(0);
             });
             it('should handle no callback', function () {
                 rfy.stop('0x010203/01');
@@ -1127,7 +1127,7 @@ describe('Rfy class', function () {
                 rfyd.stop('0x010203/01', done);
                 expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0C,1A,00,00,01,02,03,01,00,00,00,00,00');
 //                expect(debugLogSpy).toHaveBeenCalledWith('[rfxcom] on /dev/ttyUSB0 - Sent    : 0C,1A,00,00,01,02,03,01,00,00,00,00,00');
-                debugDevice.acknowledge[0]();
+                debugDevice.simulateAck(0);
             });
             it('should handle no callback', function () {
                 rfy.stop('0x010203/01');

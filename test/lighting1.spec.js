@@ -62,7 +62,7 @@ describe('Lighting1 class', function () {
             const debugLogSpy = spyOn(debugDevice, 'debugLog');
             debug.chime('C14', done);
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 07,10,01,00,43,0E,07,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
     });
     describe('.program', function () {
@@ -98,7 +98,7 @@ describe('Lighting1 class', function () {
             debug.program('C1', done);
 //            expect(debugLogSpy).toHaveBeenCalledWith('[rfxcom] on /dev/ttyUSB0 - Sent    : 07,10,0C,00,43,01,04,00');
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 07,10,0C,00,43,01,04,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
     });
     describe('.unsupportedCommands', function () {

@@ -139,7 +139,7 @@ describe('Lighting3 class', function () {
             const debugLogSpy = spyOn(debugDevice, 'debugLog');
             debugLight.switchOn(['16', '0'], done);
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 08,12,00,00,0F,FF,03,10,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
         it('should accept the highest system code & channel number', function (done) {
             let sentCommandId = NaN;

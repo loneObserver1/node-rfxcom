@@ -75,7 +75,7 @@ describe('Lighting5 class', function () {
                         done();
                     });
                     expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0A,14,00,00,F0,9A,C8,01,01,1F,00');
-                    debugDevice.acknowledge[0]();
+                    debugDevice.simulateAck(0);
                 });
                 it('should throw an exception with a group address', function () {
                     expect(function () {

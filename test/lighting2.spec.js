@@ -71,7 +71,7 @@ describe('Lighting2 class', function () {
             const debugLogSpy = spyOn(debugDevice, 'debugLog');
             debugLight.switchOn('0x03FFFFFF/1', done);
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0B,11,02,00,03,FF,FF,FF,01,01,0F,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
         it('should throw an exception with a badly formatted deviceId', function () {
             expect(function () {

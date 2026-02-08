@@ -71,7 +71,7 @@ describe('Blinds2 class', function () {
                 const debugLogSpy = spyOn(debugDevice, 'debugLog');
                 debug.open('0x12345678/9', done);
                 expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0C,31,00,00,12,34,56,78,08,00,00,00,00');
-                debugDevice.acknowledge[0]();
+                debugDevice.simulateAck(0);
             });
             it('should send the correct bytes for a close() command to the serialport', function (done) {
                 let sentCommandId = NaN;

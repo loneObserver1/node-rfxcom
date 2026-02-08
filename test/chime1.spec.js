@@ -59,7 +59,7 @@ describe('Chime1 class', function () {
             const debugLogSpy = spyOn(debugDevice, 'debugLog');
             debug.chime('0x2a', done);
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 07,16,00,00,00,2A,05,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
         it('should accept a valid tone number', function (done) {
             let sentCommandId = NaN;

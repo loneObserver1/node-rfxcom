@@ -55,7 +55,7 @@ describe('Curtain1 class', function () {
             debugDevice.connected = true;
             curtain.open('a1', done);
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 07,18,00,00,41,01,00,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
         it('should throw an exception with an invalid format deviceId', function () {
             expect(function () {

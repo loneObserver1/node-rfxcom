@@ -59,7 +59,7 @@ describe('Lighting6 class', function () {
                 done();
             });
             expect(debugLogSpy).toHaveBeenCalledWith('Sent    : 0B,15,00,00,F0,9A,42,01,00,00,00,00');
-            debugDevice.acknowledge[0]();
+            debugDevice.simulateAck(0);
         });
         it('should accept an array address', function (done) {
             let sentCommandId = NaN;
